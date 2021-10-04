@@ -1,0 +1,48 @@
+{% extends "base.jinja" %}
+
+{% block head %}
+    <title>Tic-Tac-Toe</title>
+{% endblock %}
+    
+{% block main %}
+    <p id="header">||||||||   Tic  ||||||  Tac  ||||  Toe  ||</p>
+    <div id="game-id">
+        {# will be received from the server #}
+    </div>
+    <div id="boardAndPlayerInfo">
+        <div id="playerInfo"></div>
+        <div class="board" id="board">
+            <div class="square" data-cell="0"></div>
+            <div class="square" data-cell="1"></div>
+            <div class="square" data-cell="2"></div>
+            <div class="square" data-cell="3"></div>
+            <div class="square" data-cell="4"></div>
+            <div class="square" data-cell="5"></div>
+            <div class="square" data-cell="6"></div>
+            <div class="square" data-cell="7"></div>
+            <div class="square" data-cell="8"></div>
+        </div>
+    </div>
+    <div id="chatBox">
+            <input id="chatInput" placeholder="Type your message here..." onkeydown="search(this)"> 
+            <button id="messageButton">send message</button>
+            <ul id="receiveMessage">
+                <br>
+            </ul>
+    </div>
+    <div id="room_full">
+        <p> Room is full!</p>
+    </div>
+    </div>
+    <div id="game-type">
+        <input id="loginId" placeholder="What is your username" required = "required" name="user_name">
+        <button type="submit" id="start_new_game"> START A NEW GAME </button>
+        <input type="text" id="room_id" placeholder="Put Room Id Here">
+        <button type="submit" id="join_a_game"> JOIN A GAME </button>
+    </div>
+    <div id="message">
+        <div id="gameEnd"></div>
+        <button id="restart">Restart</button>
+    </div>
+    
+{% endblock %}
